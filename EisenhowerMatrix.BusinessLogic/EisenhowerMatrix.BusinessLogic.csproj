@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EisenhowerMatrix.Entities\EisenhowerMatrix.Entities.csproj" />
+    <ProjectReference Include="..\EisenhowerMatrix.Repositories.Interfaces\EisenhowerMatrix.Repositories.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

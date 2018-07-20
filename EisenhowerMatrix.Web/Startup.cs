@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EisenhowerMatrix.BusinessLogic;
+using EisenhowerMatrix.BusinessLogic.Implementation;
 using EisenhowerMatrix.Repositories.Ef;
+using EisenhowerMatrix.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -37,8 +40,10 @@ namespace EisenhowerMatrix.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddTransient<ITodoTaskService, TodoTaskService>();
+            services.AddTransient<ITodoTaskRepository, TodoTaskRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EisenhowerMatrix.BusinessLogic.Implementation
 {
-    class TodoTaskService : ITodoTaskService
+    public class TodoTaskService : ITodoTaskService
     {
         private ITodoTaskRepository todoTaskRepository;
 

@@ -35,3 +35,13 @@ body {
         display: none;
     }
 }
+
+.finished-task
+{
+   text-decoration: line-through;
+}
+
+.field-validation-error
+{
+    color:red;
+}

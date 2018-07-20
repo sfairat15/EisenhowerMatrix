@@ -1,0 +1,92 @@
+﻿@model IndexModel
+
+@{
+    ViewData["Title"] = "Todo task old school page";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    Here you can see old (before Ajax) era of working with data.
+</p>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-lg-12">
+                <a asp-action="Create" class="btn btn-success">Create new task</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>TODO Tasks</h3>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Urgency</th>
+                            <th>Importance</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Tasks.Count == 0)
+                        {
+                            <tr>
+                                <td colspan="5">
+                                    No tasks
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model.Tasks)
+                            {
+                                <tr class="@(item.IsFinished ? "finished-task" : "")">
+                                    <td>
+                                        @item.Id
+                                    </td>
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>
+                                        @item.Urgency
+                                    </td>
+                                    <td>
+                                        @item.Importance
+                                    </td>
+                                    <td>
+                                        <div class="row text-right">
+                                            @if (item.IsFinished)
+                                            {
+                                                <form asp-action="MarkAsNotFinished" method="post" class="form-inline" style="display:inline">
+                                                    <input name="id" type="hidden" value="@item.Id" />
+                                                    <input type="submit" value="Unfinish" class="btn btn-primary btn-sm" />
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <form asp-action="MarkAsFinished" method="post" class="form-inline" style="display:inline">
+                                                    <input name="id" type="hidden" value="@item.Id" />
+                                                    <input type="submit" value="Finish" class="btn btn-warning btn-sm" />
+                                                </form>
+                                            }
+                                            <form asp-action="Delete" method="post" class="form-inline" style="display:inline">
+                                                <input name="id" type="hidden" value="@item.Id" />
+                                                <input type="submit" value="Del" class="btn btn-danger btn-sm" />
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        Graph here
+    </div>
+</div>

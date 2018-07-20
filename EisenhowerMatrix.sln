@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EisenhowerMatrix.Web", "EisenhowerMatrix.Web\EisenhowerMatrix.Web.csproj", "{F043A8AB-AE92-414D-B2BF-29E841922DBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F043A8AB-AE92-414D-B2BF-29E841922DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F043A8AB-AE92-414D-B2BF-29E841922DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F043A8AB-AE92-414D-B2BF-29E841922DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F043A8AB-AE92-414D-B2BF-29E841922DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4687F5FC-B3D5-4374-9A80-39A062FBBEA2}
+	EndGlobalSection
+EndGlobal
